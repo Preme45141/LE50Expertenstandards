@@ -1,464 +1,927 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografik: Expertenstandards in der Pflege</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-        }
-       .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-            max-height: 50vh;
-        }
-        @media (max-width: 768px) {
-           .chart-container {
-                height: 350px;
-                max-height: 60vh;
-            }
-        }
-       .flowchart-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-       .flowchart-step.icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-       .flowchart-connector {
-            display: none;
-        }
-        @media (min-width: 1024px) {
-           .flowchart-connector {
-                display: block;
-                position: absolute;
-                top: 32px;
-                left: 100%;
-                width: 100%;
-                height: 2px;
-                transform: translateX(-50%);
-            }
-           .flowchart-connector::after {
-                content: '►';
-                position: absolute;
-                right: -10px;
-                top: -11px;
-                font-size: 1.5rem;
-            }
-        }
-        
-    </style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infografik: Expertenstandards in der Pflege</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background-color: #f8fafc;
+
+        }
+
+       .chart-container {
+
+            position: relative;
+
+            width: 100%;
+
+            max-width: 800px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+            height: 400px;
+
+            max-height: 50vh;
+
+        }
+
+        @media (max-width: 768px) {
+
+           .chart-container {
+
+                height: 350px;
+
+                max-height: 60vh;
+
+            }
+
+        }
+
+       .flowchart-step {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+
+        }
+
+       .flowchart-step.icon {
+
+            width: 64px;
+
+            height: 64px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 2rem;
+
+            margin-bottom: 1rem;
+
+        }
+
+       .flowchart-connector {
+
+            display: none;
+
+        }
+
+        @media (min-width: 1024px) {
+
+           .flowchart-connector {
+
+                display: block;
+
+                position: absolute;
+
+                top: 32px;
+
+                left: 100%;
+
+                width: 100%;
+
+                height: 2px;
+
+                transform: translateX(-50%);
+
+            }
+
+           .flowchart-connector::after {
+
+                content: '►';
+
+                position: absolute;
+
+                right: -10px;
+
+                top: -11px;
+
+                font-size: 1.5rem;
+
+            }
+
+        }
+
+        
+
+    </style>
+
 </head>
+
 <body class="text-gray-800">
 
-    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
-        <header class="text-center py-8 md:py-12">
-                    <h1 class="text-4xl md:text-6xl font-bold" style="color: #005f73;">Expertenstandards in der Pflege</h1>
-            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">Eine visuelle Reise von der Wissenschaft zur Praxis – Das Fundament für qualitätsvolles Handeln.</p>
-        </header>
 
-        <main class="space-y-16 md:space-y-24">
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
-            <section id="what-are-standards" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-1 text-center">
-                        <div class="text-8xl font-bold" style="color: #ee9b00;">100%</div>
-                        <div class="text-2xl font-semibold mt-2" style="color: #005f73;">Qualität</div>
-                        <p class="text-gray-500 mt-1">Wissenschaftlich fundiert</p>
-                    </div>
-                    <div class="md:col-span-2">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: #005f73;">Die Brücke zwischen Forschung und Pflegebett</h2>
-                        <p class="text-gray-700 leading-relaxed">
-                            Expertenstandards sind wissenschaftlich fundierte Leitlinien, die von Expert_innen entwickelt wurden, um eine qualitativ hochwertige Patientenversorgung sicherzustellen.[1, 2, 3] Sie repräsentieren den aktuellen nationalen und internationalen Stand der pflegewissenschaftlichen Erkenntnisse und definieren konkrete Ziele und Maßnahmen für verschiedene Themenbereiche der Pflege.[4, 5, 2] Ihr primärer Zweck ist es, die Qualität der Pflege zu sichern und kontinuierlich zu verbessern.[2, 6] Die Entwicklung und Herausgabe dieser Standards in Deutschland obliegt dem Deutschen Netzwerk für Qualitätsentwicklung in der Pflege (DNQP).[4, 1, 5, 2, 3] Die Gründung des DNQP in den frühen 1990er Jahren erfolgte vor dem Hintergrund der von der Weltgesundheitsorganisation (WHO) betonten Bedeutung von Qualitätsstandards in der Pflege.[4]
-                        </p>
-                    </div>
-                </div>
-            </section>
 
-            <section id="development-process">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Der Weg zum Standard: Ein 5-Phasen-Prozess</h2>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Die Entstehung eines Expertenstandards ist ein systematischer und partizipativer Prozess, der sicherstellt, dass die finale Leitlinie wissenschaftlich fundiert, praxisrelevant und breit akzeptiert ist.[4]
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-y-12 md:gap-x-8">
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">💡</div>
-                        <h3 class="font-bold text-lg mb-2">1. Themenfindung</h3>
-                        <p class="text-sm text-gray-600">Identifikation relevanter Pflegeprobleme und Bedarfe aus der Praxis.[4]</p>
-                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">📚</div>
-                        <h3 class="font-bold text-lg mb-2">2. Literatur- recherche</h3>
-                        <p class="text-sm text-gray-600">Systematische Sammlung und Bewertung der besten verfügbaren wissenschaftlichen Evidenz.[4]</p>
-                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">👥</div>
-                        <h3 class="font-bold text-lg mb-2">3. Experten- gruppe</h3>
-                        <p class="text-sm text-gray-600">Entwicklung eines Standard-Entwurfs durch ein multidisziplinäres Team.[4]</p>
-                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">🗣️</div>
-                        <h3 class="font-bold text-lg mb-2">4. Konsentierung</h3>
-                        <p class="text-sm text-gray-600">Diskussion und Abstimmung des Entwurfs auf einer nationalen Konferenz zur Sicherung des Konsenses.[4, 7]</p>
-                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">🔄</div>
-                        <h3 class="font-bold text-lg mb-2">5. Implementierung & Update</h3>
-                        <p class="text-sm text-gray-600">Praxiseinführung, Evaluation und regelmäßige Aktualisierung alle 5 Jahre.[4, 7]</p>
-                    </div>
-                </div>
-            </section>
 
-            <section id="anatomy">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Anatomie eines Expertenstandards</h2>
-                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Jeder Standard ist klar in drei Ebenen gegliedert, die zusammen einen Kreislauf der Qualitätssicherung bilden. Sie beantworten die Fragen: Was brauchen wir? Was tun wir? Was erreichen wir? [7, 5]
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #0a9396;">
-                        <div class="text-5xl mb-4">🏢</div>
-                        <h3 class="text-2xl font-bold mb-3" style="color: #0a9396;">Strukturebene</h3>
-                        <p class="text-gray-600">Definiert die notwendigen Rahmenbedingungen: Qualifikation des Personals, Verfügbarkeit von Materialien und die organisatorischen Voraussetzungen.[7, 5]</p>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #ee9b00;">
-                        <div class="text-5xl mb-4">⚙️</div>
-                        <h3 class="text-2xl font-bold mb-3" style="color: #ee9b00;">Prozessebene</h3>
-                        <p class="text-gray-600">Beschreibt die konkreten pflegerischen Handlungen: von der Einschätzung über die Planung und Durchführung bis hin zur Dokumentation der Maßnahmen.[7, 5]</p>
-                    </div>
-                     <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #ca6702;">
-                        <div class="text-5xl mb-4">🎯</div>
-                        <h3 class="text-2xl font-bold mb-3" style="color: #ca6702;">Ergebnisebene</h3>
-                        <p class="text-gray-600">Legt die messbaren Ziele fest, die bei den Patient_innen erreicht werden sollen, z.B. Schmerzreduktion oder Erhalt der Mobilität.[7, 5]</p>
-                    </div>
-                </div>
-            </section>
+        <header class="text-center py-8 md:py-12">
 
-            <section id="benefits-chart">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Der Mehrwert in der Praxis</h2>
-                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Expertenstandards schaffen einen klaren Gewinn für alle Beteiligten. Sie erhöhen nicht nur die Versorgungsqualität, sondern stärken auch die Professionalität der Pflege und bieten rechtliche Sicherheit.[7, 3, 8, 9]
-                </p>
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                    <div class="chart-container">
-                        <canvas id="benefitsChart"></canvas>
-                    </div>
-                </div>
-            </section>
+                    <h1 class="text-4xl md:text-6xl font-bold" style="color: #005f73;">Expertenstandards in der Pflege</h1>
 
-            <section id="examples-chart">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Standards in Aktion: Konkrete Anwendungsfelder</h2>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Expertenstandards decken zentrale Pflegephänomene und Risiken ab und geben klare Leitlinien für hochrelevante Themen, von der Wundversorgung bis zur Beziehungsgestaltung, sowohl in der ambulanten als auch in der stationären Pflege.[10, 11]
-                </p>
-                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                    <div class="chart-container" style="height: 500px; max-height: 70vh;">
-                         <canvas id="examplesChart"></canvas>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="implementation-process" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Expertenstandards in der Praxis: Der Implementierungsprozess</h2>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Die Einführung eines Expertenstandards in einer Pflegeeinrichtung ist ein strukturierter Prozess, der eine korrekte und einheitliche Anwendung gewährleistet und das Haftungsrisiko reduziert.[3]
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8">
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">📝</div>
-                        <h3 class="font-bold text-lg mb-2">1. Vorbereitung & Planung</h3>
-                        <p class="text-sm text-gray-600">Beschaffung des Standards, gründliche Analyse und Festlegung von Zeitrahmen und Zuständigkeiten (z.B. durch PDL, QB).[3]</p>
-                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">✍️</div>
-                        <h3 class="font-bold text-lg mb-2">2. Anpassung & Dokumentation</h3>
-                        <p class="text-sm text-gray-600">Anpassung des Standards an die hauseigenen Gegebenheiten durch Qualitätszirkel (QZ) und Erstellung/Anpassung von Formularen.[3]</p>
-                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">🎓</div>
-                        <h3 class="font-bold text-lg mb-2">3. Einführung & Schulung</h3>
-                        <p class="text-sm text-gray-600">Vorstellung des angepassten Standards und Durchführung von Schulungen für alle Mitarbeiter_innen.[3]</p>
-                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
-                    </div>
-                    <div class="flowchart-step">
-                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">📊</div>
-                        <h3 class="font-bold text-lg mb-2">4. Evaluation & Anpassung</h3>
-                        <p class="text-sm text-gray-600">Regelmäßige Überprüfung der Effizienz und Effektivität des Standards (z.B. in Dienstberatungen) und bei Bedarf Anpassung.[3]</p>
-                    </div>
-                </div>
-            </section>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-gray-600">Eine visuelle Reise von der Wissenschaft zur Praxis – Das Fundament für qualitätsvolles Handeln.</p>
 
-            <section id="ebn-connection">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Die Wurzel allen Handelns: Evidence-based Nursing (EBN)</h2>
-                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
-                    Expertenstandards sind die direkte praktische Anwendung von EBN. Sie bündeln die vier Säulen der evidenzbasierten Pflege zu einer national gültigen Leitlinie und fördern kontinuierliches Lernen und kritische Reflexion.[12, 13, 14]
-                </p>
-                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row items-center justify-center gap-8">
-                    <div class="grid grid-cols-2 gap-6 text-center">
-                        <div class="p-4 bg-teal-50 rounded-lg">
-                            <h4 class="font-bold text-teal-800">Externe Evidenz</h4>
-                            <p class="text-sm text-teal-700">Aktuelle Forschung & Studien [12]</p>
-                        </div>
-                        <div class="p-4 bg-amber-50 rounded-lg">
-                            <h4 class="font-bold text-amber-800">Interne Ev4idenz</h4>
-                            <p class="text-sm text-amber-700">Klinische Erfahrung der Pflegekraft [12]</p>
-                        </div>
-                        <div class="p-4 bg-orange-50 rounded-lg">
-                            <h4 class="font-bold text-orange-800">Patienten- präferenzen</h4>
-                            <p class="text-sm text-orange-700">Wünsche & Bedürfnisse des Individuums [12]</p>
-                        </div>
-                         <div class="p-4 bg-gray-100 rounded-lg">
-                            <h4 class="font-bold text-gray-800">Verfügbare Ressourcen</h4>
-                            <p class="text-sm text-gray-700">Materielle & personelle Gegebenheiten [12]</p>
-                        </div>
-                    </div>
-                    <div class="text-5xl font-bold text-gray-300 mx-8 hidden lg:block">➔</div>
-                    <div class="text-5xl font-bold text-gray-300 my-4 lg:hidden">⬇</div>
-                    <div class="bg-blue-900 text-white p-8 rounded-xl text-center shadow-2xl">
-                        <h3 class="text-3xl font-bold">Expertenstandard</h3>
-                        <p class="mt-2 opacity-90">Die Synthese für eine qualitätsgesicherte Pflegepraxis</p>
-                    </div>
-                </div>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mt-8">
-                    Die Integration von externer Evidenz (Forschung) mit interner Evidenz (klinischer Erfahrung) und den Präferenzen der Patient_innen verhindert, dass Expertenstandards zu starren „Kochbuch“-Regeln werden. Stattdessen dienen sie als dynamischer Rahmen, der zur kritischen Bewertung und individualisierten Anwendung anregt, um eine patientenorientierte Versorgung bei gleichzeitiger Wahrung einer wissenschaftlichen Grundlage zu gewährleisten.[12]
-                </p>
-            </section>
+        </header>
 
-            <section id="case-study-generator" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #005f73;">✨ Fallbeispiel-Generator ✨</h2>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-8">
-                    Geben Sie den Namen eines Expertenstandards ein (z.B. "Dekubitusprophylaxe") und lassen Sie sich ein passendes Fallbeispiel generieren, um die Anwendung in der Praxis zu verstehen.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 mb-6 max-w-2xl mx-auto">
-                    <input type="text" id="standardInput" placeholder="Expertenstandard eingeben (z.B. Dekubitusprophylaxe)" class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="border-color: #0a9396;">
-                    <button id="generateButton" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-200 shadow-md" style="background-color: #005f73;">
-                        Fallbeispiel generieren ✨
-                    </button>
-                </div>
-                <div id="loadingIndicator" class="text-center text-gray-500 mb-4 hidden">Generiere Fallbeispiel...</div>
-                <div id="caseStudyOutput" class="bg-gray-50 p-4 rounded-lg border border-gray-200 min-h-[150px] text-gray-700 leading-relaxed whitespace-pre-wrap">
-                    Ihr generiertes Fallbeispiel erscheint hier.
-                </div>
-                <div id="errorMessage" class="text-red-600 text-center mt-4 hidden"></div>
-            </section>
 
-        </main>
 
-        <footer class="text-center py-12 mt-16 border-t">
-            <p class="text-gray-500">&copy; 2025 | Infografik erstellt zur Visualisierung von Lehrinhalten.</p>
-        </footer>
+        <main class="space-y-16 md:space-y-24">
 
-    </div>
 
-    <script>
-        // Callback function for Chart.js tooltips to handle wrapped labels
-        const tooltipCallback = {
-            title: function(tooltipItems) {
-                const item = tooltipItems;
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                  return label.join(' ');
-                }
-                return label;
-            }
-        };
-        
-        // Function to wrap long labels for Chart.js
-        const wrapLabel = (str, maxWidth = 16) => {
-            if (str.length <= maxWidth) return str;
-            const words = str.split(' ');
-            const lines =;
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
-                    lines.push(currentLine);
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine.length > 0) {
-                lines.push(currentLine);
-            }
-            return lines;
-        };
 
-        // Data for the 'benefitsChart'
-        const benefitsData = {
-            labels:,
-            datasets: [{
-                label: 'Wirkung der Expertenstandards',
-                data: ,
-                backgroundColor: ['#0a9396', '#94d2bd', '#ee9b00', '#ca6702', '#bb3e03'],
-                borderColor: '#ffffff',
-                borderWidth: 2,
-                borderRadius: 5,
-            }]
-        };
+            <section id="what-are-standards" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
 
-        // Initialize 'benefitsChart'
-        const benefitsCtx = document.getElementById('benefitsChart').getContext('2d');
-        new Chart(benefitsCtx, {
-            type: 'bar',
-            data: benefitsData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y', // Horizontal bar chart
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 100,
-                        title: { display: true, text: 'Relativer Nutzen (Illustrativ)', color: '#4b5563' }
-                    },
-                    y: {
-                        ticks: { color: '#1f2937' }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: tooltipCallback,
-                        backgroundColor: '#005f73',
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 12 },
-                        padding: 10,
-                        cornerRadius: 8
-                    }
-                }
-            }
-        });
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
 
-        // Raw labels for the 'examplesChart' (will be wrapped)
-        const rawExamplesLabels =;
+                    <div class="md:col-span-1 text-center">
 
-        // Data for the 'examplesChart' with wrapped labels
-        const examplesData = {
-            labels: rawExamplesLabels.map(label => wrapLabel(label, 25)),
-            datasets:,
-                backgroundColor: ['#005f73', '#0a9396', '#94d2bd', '#e9d8a6', '#ee9b00', '#ca6702', '#bb3e03'],
-                borderColor: '#ffffff',
-                borderWidth: 2
-            }]
-        };
+                        <div class="text-8xl font-bold" style="color: #ee9b00;">100%</div>
 
-        // Initialize 'examplesChart'
-        const examplesCtx = document.getElementById('examplesChart').getContext('2d');
-        new Chart(examplesCtx, {
-            type: 'bar',
-            data: examplesData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 10,
-                        title: { display: true, text: 'Relevanz (Skala 1-10, Illustrativ)', color: '#4b5563' },
-                        ticks: { color: '#1f2937' }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: tooltipCallback,
-                        backgroundColor: '#005f73',
-                        titleFont: { size: 14, weight: 'bold' },
-                        bodyFont: { size: 12 },
-                        padding: 10,
-                        cornerRadius: 8
-                    }
-                }
-            }
-        });
+                        <div class="text-2xl font-semibold mt-2" style="color: #005f73;">Qualität</div>
 
-        // LLM Integration for Case Study Generator
-        const standardInput = document.getElementById('standardInput');
-        const generateButton = document.getElementById('generateButton');
-        const loadingIndicator = document.getElementById('loadingIndicator');
-        const caseStudyOutput = document.getElementById('caseStudyOutput');
-        const errorMessage = document.getElementById('errorMessage');
+                        <p class="text-gray-500 mt-1">Wissenschaftlich fundiert</p>
 
-        generateButton.addEventListener('click', generateCaseStudy);
+                    </div>
 
-        async function generateCaseStudy() {
-            const standardName = standardInput.value.trim();
-            caseStudyOutput.textContent = ''; // Clear previous output
-            errorMessage.textContent = ''; // Clear previous error
-            errorMessage.classList.add('hidden');
-            
-            if (!standardName) {
-                errorMessage.textContent = 'Bitte geben Sie einen Expertenstandard ein.';
-                errorMessage.classList.remove('hidden');
-                return;
-            }
+                    <div class="md:col-span-2">
 
-            loadingIndicator.classList.remove('hidden');
-            generateButton.disabled = true; // Disable button during generation
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: #005f73;">Die Brücke zwischen Forschung und Pflegebett</h2>
 
-            try {
-                let chatHistory =;
-                const prompt = `Generiere ein kurzes, realistisches Fallbeispiel (ca. 100-150 Wörter) aus dem Pflegealltag, in dem der Expertenstandard '${standardName}' relevant ist und angewendet wird. Beschreibe die Situation, das Problem und wie der Standard zur Lösung beiträgt.`;
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                        <p class="text-gray-700 leading-relaxed">
 
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Canvas will automatically provide the API key at runtime
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                            Expertenstandards sind wissenschaftlich fundierte Leitlinien, die von Expert_innen entwickelt wurden, um eine qualitativ hochwertige Patientenversorgung sicherzustellen.[1, 2, 3] Sie repräsentieren den aktuellen nationalen und internationalen Stand der pflegewissenschaftlichen Erkenntnisse und definieren konkrete Ziele und Maßnahmen für verschiedene Themenbereiche der Pflege.[4, 5, 2] Ihr primärer Zweck ist es, die Qualität der Pflege zu sichern und kontinuierlich zu verbessern.[2, 6] Die Entwicklung und Herausgabe dieser Standards in Deutschland obliegt dem Deutschen Netzwerk für Qualitätsentwicklung in der Pflege (DNQP).[4, 1, 5, 2, 3] Die Gründung des DNQP in den frühen 1990er Jahren erfolgte vor dem Hintergrund der von der Weltgesundheitsorganisation (WHO) betonten Bedeutung von Qualitätsstandards in der Pflege.[4]
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                        </p>
 
-                const result = await response.json();
+                    </div>
 
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates.content && result.candidates.content.parts &&
-                    result.candidates.content.parts.length > 0) {
-                    const text = result.candidates.content.parts.text;
-                    caseStudyOutput.textContent = text;
-                } else {
-                    console.error('Unexpected API response structure:', result);
-                    errorMessage.textContent = 'Es gab ein Problem beim Generieren des Fallbeispiels. Bitte versuchen Sie es erneut.';
-                    errorMessage.classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error('Error calling Gemini API:', error);
-                errorMessage.textContent = 'Ein Fehler ist aufgetreten: ' + error.message;
-                errorMessage.classList.remove('hidden');
-            } finally {
-                loadingIndicator.classList.add('hidden');
-                generateButton.disabled = false; // Re-enable button
-            }
-        }
-    </script>
+                </div>
+
+            </section>
+
+
+
+            <section id="development-process">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Der Weg zum Standard: Ein 5-Phasen-Prozess</h2>
+
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Die Entstehung eines Expertenstandards ist ein systematischer und partizipativer Prozess, der sicherstellt, dass die finale Leitlinie wissenschaftlich fundiert, praxisrelevant und breit akzeptiert ist.[4]
+
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-y-12 md:gap-x-8">
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">💡</div>
+
+                        <h3 class="font-bold text-lg mb-2">1. Themenfindung</h3>
+
+                        <p class="text-sm text-gray-600">Identifikation relevanter Pflegeprobleme und Bedarfe aus der Praxis.[4]</p>
+
+                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">📚</div>
+
+                        <h3 class="font-bold text-lg mb-2">2. Literatur- recherche</h3>
+
+                        <p class="text-sm text-gray-600">Systematische Sammlung und Bewertung der besten verfügbaren wissenschaftlichen Evidenz.[4]</p>
+
+                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">👥</div>
+
+                        <h3 class="font-bold text-lg mb-2">3. Experten- gruppe</h3>
+
+                        <p class="text-sm text-gray-600">Entwicklung eines Standard-Entwurfs durch ein multidisziplinäres Team.[4]</p>
+
+                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">🗣️</div>
+
+                        <h3 class="font-bold text-lg mb-2">4. Konsentierung</h3>
+
+                        <p class="text-sm text-gray-600">Diskussion und Abstimmung des Entwurfs auf einer nationalen Konferenz zur Sicherung des Konsenses.[4, 7]</p>
+
+                        <div class="flowchart-connector" style="background-color: #94d2bd; color: #94d2bd;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #94d2bd; color: #005f73;">🔄</div>
+
+                        <h3 class="font-bold text-lg mb-2">5. Implementierung & Update</h3>
+
+                        <p class="text-sm text-gray-600">Praxiseinführung, Evaluation und regelmäßige Aktualisierung alle 5 Jahre.[4, 7]</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section id="anatomy">
+
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Anatomie eines Expertenstandards</h2>
+
+                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Jeder Standard ist klar in drei Ebenen gegliedert, die zusammen einen Kreislauf der Qualitätssicherung bilden. Sie beantworten die Fragen: Was brauchen wir? Was tun wir? Was erreichen wir? [7, 5]
+
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #0a9396;">
+
+                        <div class="text-5xl mb-4">🏢</div>
+
+                        <h3 class="text-2xl font-bold mb-3" style="color: #0a9396;">Strukturebene</h3>
+
+                        <p class="text-gray-600">Definiert die notwendigen Rahmenbedingungen: Qualifikation des Personals, Verfügbarkeit von Materialien und die organisatorischen Voraussetzungen.[7, 5]</p>
+
+                    </div>
+
+                     <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #ee9b00;">
+
+                        <div class="text-5xl mb-4">⚙️</div>
+
+                        <h3 class="text-2xl font-bold mb-3" style="color: #ee9b00;">Prozessebene</h3>
+
+                        <p class="text-gray-600">Beschreibt die konkreten pflegerischen Handlungen: von der Einschätzung über die Planung und Durchführung bis hin zur Dokumentation der Maßnahmen.[7, 5]</p>
+
+                    </div>
+
+                     <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-t-4" style="border-color: #ca6702;">
+
+                        <div class="text-5xl mb-4">🎯</div>
+
+                        <h3 class="text-2xl font-bold mb-3" style="color: #ca6702;">Ergebnisebene</h3>
+
+                        <p class="text-gray-600">Legt die messbaren Ziele fest, die bei den Patient_innen erreicht werden sollen, z.B. Schmerzreduktion oder Erhalt der Mobilität.[7, 5]</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section id="benefits-chart">
+
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Der Mehrwert in der Praxis</h2>
+
+                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Expertenstandards schaffen einen klaren Gewinn für alle Beteiligten. Sie erhöhen nicht nur die Versorgungsqualität, sondern stärken auch die Professionalität der Pflege und bieten rechtliche Sicherheit.[7, 3, 8, 9]
+
+                </p>
+
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+
+                    <div class="chart-container">
+
+                        <canvas id="benefitsChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section id="examples-chart">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Standards in Aktion: Konkrete Anwendungsfelder</h2>
+
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Expertenstandards decken zentrale Pflegephänomene und Risiken ab und geben klare Leitlinien für hochrelevante Themen, von der Wundversorgung bis zur Beziehungsgestaltung, sowohl in der ambulanten als auch in der stationären Pflege.[10, 11]
+
+                </p>
+
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+
+                    <div class="chart-container" style="height: 500px; max-height: 70vh;">
+
+                         <canvas id="examplesChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+
+            <section id="implementation-process" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Expertenstandards in der Praxis: Der Implementierungsprozess</h2>
+
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Die Einführung eines Expertenstandards in einer Pflegeeinrichtung ist ein strukturierter Prozess, der eine korrekte und einheitliche Anwendung gewährleistet und das Haftungsrisiko reduziert.[3]
+
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-y-12 md:gap-x-8">
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">📝</div>
+
+                        <h3 class="font-bold text-lg mb-2">1. Vorbereitung & Planung</h3>
+
+                        <p class="text-sm text-gray-600">Beschaffung des Standards, gründliche Analyse und Festlegung von Zeitrahmen und Zuständigkeiten (z.B. durch PDL, QB).[3]</p>
+
+                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">✍️</div>
+
+                        <h3 class="font-bold text-lg mb-2">2. Anpassung & Dokumentation</h3>
+
+                        <p class="text-sm text-gray-600">Anpassung des Standards an die hauseigenen Gegebenheiten durch Qualitätszirkel (QZ) und Erstellung/Anpassung von Formularen.[3]</p>
+
+                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">🎓</div>
+
+                        <h3 class="font-bold text-lg mb-2">3. Einführung & Schulung</h3>
+
+                        <p class="text-sm text-gray-600">Vorstellung des angepassten Standards und Durchführung von Schulungen für alle Mitarbeiter_innen.[3]</p>
+
+                        <div class="flowchart-connector" style="background-color: #e9d8a6; color: #e9d8a6;"></div>
+
+                    </div>
+
+                    <div class="flowchart-step">
+
+                        <div class="icon" style="background-color: #e9d8a6; color: #ca6702;">📊</div>
+
+                        <h3 class="font-bold text-lg mb-2">4. Evaluation & Anpassung</h3>
+
+                        <p class="text-sm text-gray-600">Regelmäßige Überprüfung der Effizienz und Effektivität des Standards (z.B. in Dienstberatungen) und bei Bedarf Anpassung.[3]</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <section id="ebn-connection">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: #005f73;">Die Wurzel allen Handelns: Evidence-based Nursing (EBN)</h2>
+
+                 <p class="text-center max-w-3xl mx-auto text-gray-600 mb-16">
+
+                    Expertenstandards sind die direkte praktische Anwendung von EBN. Sie bündeln die vier Säulen der evidenzbasierten Pflege zu einer national gültigen Leitlinie und fördern kontinuierliches Lernen und kritische Reflexion.[12, 13, 14]
+
+                </p>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col lg:flex-row items-center justify-center gap-8">
+
+                    <div class="grid grid-cols-2 gap-6 text-center">
+
+                        <div class="p-4 bg-teal-50 rounded-lg">
+
+                            <h4 class="font-bold text-teal-800">Externe Evidenz</h4>
+
+                            <p class="text-sm text-teal-700">Aktuelle Forschung & Studien [12]</p>
+
+                        </div>
+
+                        <div class="p-4 bg-amber-50 rounded-lg">
+
+                            <h4 class="font-bold text-amber-800">Interne Ev4idenz</h4>
+
+                            <p class="text-sm text-amber-700">Klinische Erfahrung der Pflegekraft [12]</p>
+
+                        </div>
+
+                        <div class="p-4 bg-orange-50 rounded-lg">
+
+                            <h4 class="font-bold text-orange-800">Patienten- präferenzen</h4>
+
+                            <p class="text-sm text-orange-700">Wünsche & Bedürfnisse des Individuums [12]</p>
+
+                        </div>
+
+                         <div class="p-4 bg-gray-100 rounded-lg">
+
+                            <h4 class="font-bold text-gray-800">Verfügbare Ressourcen</h4>
+
+                            <p class="text-sm text-gray-700">Materielle & personelle Gegebenheiten [12]</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-5xl font-bold text-gray-300 mx-8 hidden lg:block">➔</div>
+
+                    <div class="text-5xl font-bold text-gray-300 my-4 lg:hidden">⬇</div>
+
+                    <div class="bg-blue-900 text-white p-8 rounded-xl text-center shadow-2xl">
+
+                        <h3 class="text-3xl font-bold">Expertenstandard</h3>
+
+                        <p class="mt-2 opacity-90">Die Synthese für eine qualitätsgesicherte Pflegepraxis</p>
+
+                    </div>
+
+                </div>
+
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mt-8">
+
+                    Die Integration von externer Evidenz (Forschung) mit interner Evidenz (klinischer Erfahrung) und den Präferenzen der Patient_innen verhindert, dass Expertenstandards zu starren „Kochbuch“-Regeln werden. Stattdessen dienen sie als dynamischer Rahmen, der zur kritischen Bewertung und individualisierten Anwendung anregt, um eine patientenorientierte Versorgung bei gleichzeitiger Wahrung einer wissenschaftlichen Grundlage zu gewährleisten.[12]
+
+                </p>
+
+            </section>
+
+
+
+            <section id="case-study-generator" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8" style="color: #005f73;">✨ Fallbeispiel-Generator ✨</h2>
+
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-8">
+
+                    Geben Sie den Namen eines Expertenstandards ein (z.B. "Dekubitusprophylaxe") und lassen Sie sich ein passendes Fallbeispiel generieren, um die Anwendung in der Praxis zu verstehen.
+
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 mb-6 max-w-2xl mx-auto">
+
+                    <input type="text" id="standardInput" placeholder="Expertenstandard eingeben (z.B. Dekubitusprophylaxe)" class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" style="border-color: #0a9396;">
+
+                    <button id="generateButton" class="bg-blue-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-200 shadow-md" style="background-color: #005f73;">
+
+                        Fallbeispiel generieren ✨
+
+                    </button>
+
+                </div>
+
+                <div id="loadingIndicator" class="text-center text-gray-500 mb-4 hidden">Generiere Fallbeispiel...</div>
+
+                <div id="caseStudyOutput" class="bg-gray-50 p-4 rounded-lg border border-gray-200 min-h-[150px] text-gray-700 leading-relaxed whitespace-pre-wrap">
+
+                    Ihr generiertes Fallbeispiel erscheint hier.
+
+                </div>
+
+                <div id="errorMessage" class="text-red-600 text-center mt-4 hidden"></div>
+
+            </section>
+
+
+
+        </main>
+
+
+
+        <footer class="text-center py-12 mt-16 border-t">
+
+            <p class="text-gray-500">&copy; 2025 | Infografik erstellt zur Visualisierung von Lehrinhalten.</p>
+
+        </footer>
+
+
+
+    </div>
+
+
+
+    <script>
+
+        // Callback function for Chart.js tooltips to handle wrapped labels
+
+        const tooltipCallback = {
+
+            title: function(tooltipItems) {
+
+                const item = tooltipItems;
+
+                let label = item.chart.data.labels[item.dataIndex];
+
+                if (Array.isArray(label)) {
+
+                  return label.join(' ');
+
+                }
+
+                return label;
+
+            }
+
+        };
+
+        
+
+        // Function to wrap long labels for Chart.js
+
+        const wrapLabel = (str, maxWidth = 16) => {
+
+            if (str.length <= maxWidth) return str;
+
+            const words = str.split(' ');
+
+            const lines =;
+
+            let currentLine = '';
+
+            for (const word of words) {
+
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+
+                    lines.push(currentLine);
+
+                    currentLine = word;
+
+                } else {
+
+                    currentLine = (currentLine + ' ' + word).trim();
+
+                }
+
+            }
+
+            if (currentLine.length > 0) {
+
+                lines.push(currentLine);
+
+            }
+
+            return lines;
+
+        };
+
+
+
+        // Data for the 'benefitsChart'
+
+        const benefitsData = {
+
+            labels:,
+
+            datasets: [{
+
+                label: 'Wirkung der Expertenstandards',
+
+                data: ,
+
+                backgroundColor: ['#0a9396', '#94d2bd', '#ee9b00', '#ca6702', '#bb3e03'],
+
+                borderColor: '#ffffff',
+
+                borderWidth: 2,
+
+                borderRadius: 5,
+
+            }]
+
+        };
+
+
+
+        // Initialize 'benefitsChart'
+
+        const benefitsCtx = document.getElementById('benefitsChart').getContext('2d');
+
+        new Chart(benefitsCtx, {
+
+            type: 'bar',
+
+            data: benefitsData,
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                indexAxis: 'y', // Horizontal bar chart
+
+                scales: {
+
+                    x: {
+
+                        beginAtZero: true,
+
+                        max: 100,
+
+                        title: { display: true, text: 'Relativer Nutzen (Illustrativ)', color: '#4b5563' }
+
+                    },
+
+                    y: {
+
+                        ticks: { color: '#1f2937' }
+
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: { display: false },
+
+                    tooltip: {
+
+                        callbacks: tooltipCallback,
+
+                        backgroundColor: '#005f73',
+
+                        titleFont: { size: 14, weight: 'bold' },
+
+                        bodyFont: { size: 12 },
+
+                        padding: 10,
+
+                        cornerRadius: 8
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+
+        // Raw labels for the 'examplesChart' (will be wrapped)
+
+        const rawExamplesLabels =;
+
+
+
+        // Data for the 'examplesChart' with wrapped labels
+
+        const examplesData = {
+
+            labels: rawExamplesLabels.map(label => wrapLabel(label, 25)),
+
+            datasets:,
+
+                backgroundColor: ['#005f73', '#0a9396', '#94d2bd', '#e9d8a6', '#ee9b00', '#ca6702', '#bb3e03'],
+
+                borderColor: '#ffffff',
+
+                borderWidth: 2
+
+            }]
+
+        };
+
+
+
+        // Initialize 'examplesChart'
+
+        const examplesCtx = document.getElementById('examplesChart').getContext('2d');
+
+        new Chart(examplesCtx, {
+
+            type: 'bar',
+
+            data: examplesData,
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                scales: {
+
+                    x: {
+
+                        beginAtZero: true,
+
+                        max: 10,
+
+                        title: { display: true, text: 'Relevanz (Skala 1-10, Illustrativ)', color: '#4b5563' },
+
+                        ticks: { color: '#1f2937' }
+
+                    }
+
+                },
+
+                plugins: {
+
+                    legend: { display: false },
+
+                    tooltip: {
+
+                        callbacks: tooltipCallback,
+
+                        backgroundColor: '#005f73',
+
+                        titleFont: { size: 14, weight: 'bold' },
+
+                        bodyFont: { size: 12 },
+
+                        padding: 10,
+
+                        cornerRadius: 8
+
+                    }
+
+                }
+
+            }
+
+        });
+
+
+
+        // LLM Integration for Case Study Generator
+
+        const standardInput = document.getElementById('standardInput');
+
+        const generateButton = document.getElementById('generateButton');
+
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        const caseStudyOutput = document.getElementById('caseStudyOutput');
+
+        const errorMessage = document.getElementById('errorMessage');
+
+
+
+        generateButton.addEventListener('click', generateCaseStudy);
+
+
+
+        async function generateCaseStudy() {
+
+            const standardName = standardInput.value.trim();
+
+            caseStudyOutput.textContent = ''; // Clear previous output
+
+            errorMessage.textContent = ''; // Clear previous error
+
+            errorMessage.classList.add('hidden');
+
+            
+
+            if (!standardName) {
+
+                errorMessage.textContent = 'Bitte geben Sie einen Expertenstandard ein.';
+
+                errorMessage.classList.remove('hidden');
+
+                return;
+
+            }
+
+
+
+            loadingIndicator.classList.remove('hidden');
+
+            generateButton.disabled = true; // Disable button during generation
+
+
+
+            try {
+
+                let chatHistory =;
+
+                const prompt = `Generiere ein kurzes, realistisches Fallbeispiel (ca. 100-150 Wörter) aus dem Pflegealltag, in dem der Expertenstandard '${standardName}' relevant ist und angewendet wird. Beschreibe die Situation, das Problem und wie der Standard zur Lösung beiträgt.`;
+
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+
+
+                const payload = { contents: chatHistory };
+
+                const apiKey = ""; // Canvas will automatically provide the API key at runtime
+
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+
+
+                const response = await fetch(apiUrl, {
+
+                    method: 'POST',
+
+                    headers: { 'Content-Type': 'application/json' },
+
+                    body: JSON.stringify(payload)
+
+                });
+
+
+
+                const result = await response.json();
+
+
+
+                if (result.candidates && result.candidates.length > 0 &&
+
+                    result.candidates.content && result.candidates.content.parts &&
+
+                    result.candidates.content.parts.length > 0) {
+
+                    const text = result.candidates.content.parts.text;
+
+                    caseStudyOutput.textContent = text;
+
+                } else {
+
+                    console.error('Unexpected API response structure:', result);
+
+                    errorMessage.textContent = 'Es gab ein Problem beim Generieren des Fallbeispiels. Bitte versuchen Sie es erneut.';
+
+                    errorMessage.classList.remove('hidden');
+
+                }
+
+            } catch (error) {
+
+                console.error('Error calling Gemini API:', error);
+
+                errorMessage.textContent = 'Ein Fehler ist aufgetreten: ' + error.message;
+
+                errorMessage.classList.remove('hidden');
+
+            } finally {
+
+                loadingIndicator.classList.add('hidden');
+
+                generateButton.disabled = false; // Re-enable button
+
+            }
+
+        }
+
+    </script>
+
 </body>
+
 </html>
